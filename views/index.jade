@@ -3,3 +3,11 @@ extends layout
 block content
   h1= title
   p Welcome to #{title}
+  div#editor
+  script(type='text/javascript', src='/ace/ace.js', charset='utf-8')
+  script.
+    $('#editor')
+        .width($('.container').width())
+    var editor = ace.edit('editor');
+    editor.setTheme('ace/theme/solarized_dark');
+    editor.getSession().setMode('ace/mode/xml');
